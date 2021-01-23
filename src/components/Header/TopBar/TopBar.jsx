@@ -11,7 +11,10 @@ import "./TopBar.scss";
  *
  * ```jsx
  *
- *<TopBar color="['white','black']" />
+ *<TopBar color=" {
+    left: "#ff512f",
+    right: "#dd2476",
+  }" />
  *
  * ```
  *
@@ -26,5 +29,8 @@ TopBar.propTypes = {
 };
 
 TopBar.defaultProps = {
-  color: null,
+  color: {
+    left: "#ff512f",
+    right: "#dd2476",
+  },
 };

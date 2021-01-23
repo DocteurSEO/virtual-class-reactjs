@@ -5,25 +5,31 @@ export default {
   title: "UI/Topbar",
   component: TopBar,
   argTypes: {
-    colorLeft: { control: "color" },
-    colorRight: { control: "color" },
+    left: { control: "color" },
+    right: { control: "color" },
   },
 };
 
 const Template = (args) => {
   let colors = Object.values(args);
 
-  return <TopBar color={colors} />;
+  return <TopBar color={args} />;
 };
 
 export const Default = Template.bind({});
 Default.args = {
-  colorLeft: "#ff512f",
-  colorRight: "#dd2476",
+  left: "#ff512f",
+  right: "#dd2476",
+};
+
+export const PinkAndOrange = Template.bind({});
+PinkAndOrange.args = {
+  left: "pink",
+  right: "#FFD0C4",
 };
 
 export const Black = Template.bind({});
 Black.args = {
-  colorLeft: "black",
-  colorRight: "black",
+  left: "black",
+  right: "black",
 };

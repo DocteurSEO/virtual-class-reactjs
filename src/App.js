@@ -4,7 +4,7 @@ import { Logo } from "./components/Logo/Logo";
 function App() {
   return (
     <div className="App">
-      <TopBar color={["#ff512f", "#dd2476"]} />
+      <TopBar />
       <Logo />
     </div>
   );
