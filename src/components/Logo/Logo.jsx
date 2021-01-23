@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 /**
  *
- *This component displays the logo, with the props you can also change the color of the logo.
+ *This component displays a logo animation , with the props you can also change the color enjoy !
  *
  *
  * ###Usage

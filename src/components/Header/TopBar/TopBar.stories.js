@@ -11,8 +11,6 @@ export default {
 };
 
 const Template = (args) => {
-  let colors = Object.values(args);
-
   return <TopBar color={args} />;
 };
 
