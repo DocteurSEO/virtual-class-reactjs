@@ -16,9 +16,9 @@ import "./Label.scss";
 
 export const Label = () => {
   return (
-    <label for="menuCheckbox" class="checkbox-label menu-label">
-      <div class="icone">
-        <div class="abs-center black-lines"></div>
+    <label htmlFor="menuCheckbox" className="checkbox-label menu-label">
+      <div className="icone">
+        <div className="abs-center black-lines"></div>
       </div>
     </label>
   );
