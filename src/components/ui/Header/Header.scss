@@ -1,0 +1,14 @@
+@import "../../../scss/globals";
+@import "../../../scss/variables";
+.top-container {
+  z-index: 10;
+  height: 200px;
+  width: 88%;
+  max-width: 1200px;
+  padding-top: 25px;
+  margin: -100px auto 50px;
+  background-color: #fff;
+  text-align: center;
+  -webkit-box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.2);
+}

@@ -1,14 +1,13 @@
-import { Label } from "./Label";
+import { Header } from "./Header";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  title: "UI/Label",
-  component: Label,
-  argTypes: { onLabelClick: { action: "clicked" } },
+  title: "UI/Header",
+  component: Header,
 };
 
 const Template = (args) => {
-  return <Label {...args} />;
+  return <Header />;
 };
 
 export const Default = Template.bind({});

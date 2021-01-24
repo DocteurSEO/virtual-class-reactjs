@@ -3,6 +3,7 @@
  * This function accepts an array, it will render a color gradient in an object.
  *
  * @param {Object} colors  color codes default value "#ff512f", "#dd2476" 
+ * @param {string}  bgColorRadial variable storing  the radial color 
  * @returns {Object} return a color gradient background
  * @example
  *

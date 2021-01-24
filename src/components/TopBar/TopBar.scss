@@ -1,8 +1,8 @@
-@import "../../../scss/globals";
-@import "../../../scss/variables";
+@import "../../scss/globals";
+@import "../../scss/variables";
 
 .top-bar {
-  z-index: 5;
+  z-index: -1;
   height: 200px;
   background: radial-gradient(circle at 1.98% 13.04%, #ff512f, transparent 100%),
     radial-gradient(circle at 98.02% 28.95%, #dd2476, transparent 100%),

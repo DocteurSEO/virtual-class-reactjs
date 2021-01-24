@@ -18,8 +18,8 @@ import "./Menu.scss";
  *
  */
 
-export const Menu = ({ statut }) => {
-  const [active, setActive] = useStateMenu(statut);
+export const Menu = ({ statut, onMenuClick }) => {
+  const [active, setActive] = useStateMenu(statut, onMenuClick);
 
   return (
     <div
@@ -33,9 +33,9 @@ export const Menu = ({ statut }) => {
       >
         <div className="abs-center white-x "></div>
       </label>
-      <div className="rela-block menu-content">
-        <h3 className="rela-block list-header">Apprenant</h3>
-        <ul className="rela-block options-list">
+      <div className="r-block menu-content">
+        <h3 className="r-block list-header">Apprenants</h3>
+        <ul className="r-block options-list">
           <li>Ajouter </li>
         </ul>
       </div>

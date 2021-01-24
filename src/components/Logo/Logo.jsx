@@ -1,3 +1,4 @@
+import React from "react";
 import PropTypes from "prop-types";
 
 /**
@@ -23,7 +24,7 @@ import PropTypes from "prop-types";
  *
  */
 
-export const Logo = ({ color }) => {
+export const Logo = React.memo(function ({ color }) {
   const { left, topLeft, topRight, right, bottomRight, bottom, end } = color;
 
   return (
@@ -264,7 +265,7 @@ export const Logo = ({ color }) => {
       </svg>
     </div>
   );
-};
+});
 
 Logo.propTypes = {
   color: PropTypes.objectOf(PropTypes.string),

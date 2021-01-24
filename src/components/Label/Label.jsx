@@ -14,9 +14,13 @@ import "./Label.scss";
  *
  */
 
-export const Label = () => {
+export const Label = ({ onLabelClick }) => {
   return (
-    <label htmlFor="menuCheckbox" className="checkbox-label menu-label">
+    <label
+      onClick={() => onLabelClick(true)}
+      htmlFor="menuCheckbox"
+      className="checkbox-label menu-label"
+    >
       <div className="icone">
         <div className="abs-center black-lines"></div>
       </div>

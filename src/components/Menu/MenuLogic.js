@@ -1,18 +1,33 @@
 import { useState } from "react";
+import { useEffect } from "react";
 
 /**
  *
  *Custom Hooks for deal with  state of Menu
  *
+ *@param {boolean} statut  default value false
+ *@param {boolean} active store state of menu 
+ *@function setActive state of menu
+ *@function useStateMenu main function 
+ *@returns {array}
+ * @example
  *
+ * const [active, setActive] = useStateMenu(true);
+  
  *
  */
 
-export const useStateMenu = (statut) => {
+export const useStateMenu = (statut, onMenuClick) => {
   const [active, setActive] = useState(statut);
 
+  useEffect(() => {
+    console.log("usefeef", statut);
+    setActive(statut);
+  }, [statut]);
+
+  /** @function closeMenu close the menu   */
   function closeMenu() {
-    setActive(false);
+    onMenuClick(false);
   }
 
   return [active, closeMenu];
