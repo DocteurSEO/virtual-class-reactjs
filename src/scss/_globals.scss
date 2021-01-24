@@ -22,3 +22,14 @@ body {
   position: relative;
   margin: auto;
 }
+
+.checkbox-label {
+  z-index: 5;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}

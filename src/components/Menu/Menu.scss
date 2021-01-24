@@ -1,0 +1,80 @@
+@import "../../scss/globals";
+@import "../../scss/variables";
+
+%pseudo-block {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 2px;
+  width: 26px;
+  background-color: #fff;
+  &:hover {
+    background-color: $primary-color;
+  }
+}
+
+.side-menu {
+  z-index: 6;
+
+  position: fixed;
+
+  top: 0;
+  left: 00px;
+
+  bottom: 0;
+  width: 360px;
+  background-color: #1a1a1a;
+  padding-top: 80px;
+}
+.side-menu-label {
+  opacity: 1;
+
+  position: absolute;
+
+  top: 20px;
+
+  right: 20px;
+}
+
+.list-header {
+  color: #888;
+  margin-bottom: 10px;
+  padding-left: 30px;
+}
+
+.options-list {
+  margin-bottom: 40px;
+  padding: 0px;
+  li {
+    height: 50px;
+    color: #ccc;
+    line-height: 50px;
+    padding-left: 40px;
+    -webkit-transition: 0.15s ease;
+    transition: 0.15s ease;
+    cursor: pointer;
+    text-decoration: none;
+    list-style-type: none;
+    &:hover {
+      padding-left: 70px;
+      background: white;
+      color: black;
+      border-left: 8px solid $primary-color;
+    }
+  }
+}
+
+.white-x {
+  height: 40px;
+  width: 40px;
+
+  &:before {
+    @extend %pseudo-block;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  &:after {
+    @extend %pseudo-block;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+}

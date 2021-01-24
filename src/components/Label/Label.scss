@@ -2,11 +2,6 @@
 @import "../../scss/variables";
 
 .checkbox-label {
-  z-index: 101;
-  height: 40px;
-  width: 40px;
-  cursor: pointer;
-
   &:after {
     height: 100%;
     font-family: "Open Sans";
