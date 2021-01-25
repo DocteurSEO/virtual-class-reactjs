@@ -1,5 +1,7 @@
 @import "../../../scss/globals";
 @import "../../../scss/variables";
+@import "../../../scss/animations";
+
 .top-container {
   z-index: 10;
   height: 200px;
@@ -11,4 +13,8 @@
   text-align: center;
   -webkit-box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.2);
+  p {
+    animation-duration: 1s;
+    animation-name: appear;
+  }
 }

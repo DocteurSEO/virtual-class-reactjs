@@ -34,7 +34,7 @@ export const Menu = ({ statut, onMenuClick }) => {
         <div className="abs-center white-x "></div>
       </label>
       <div className="r-block menu-content">
-        <h3 className="r-block list-header">Apprenants</h3>
+        <h3 className="r-block list-header">Élèves</h3>
         <ul className="r-block options-list">
           <li>Ajouter </li>
         </ul>

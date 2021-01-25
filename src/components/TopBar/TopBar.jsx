@@ -21,7 +21,7 @@ import "./TopBar.scss";
  */
 
 export const TopBar = ({ color }) => {
-  return <div className="r-block top-bar" style={setRadial(color)}></div>;
+  return <div className="r-block  top-bar " style={setRadial(color)}></div>;
 };
 
 TopBar.propTypes = {

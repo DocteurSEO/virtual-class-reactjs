@@ -23,6 +23,15 @@ body {
   position: relative;
   margin: auto;
 }
+.container {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  transform-origin: top center;
+  transform: scale(0.8);
+}
 
 .checkbox-label {
   z-index: 5;
