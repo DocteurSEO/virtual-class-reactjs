@@ -13,12 +13,13 @@
   })
  */
 
-export const setRadial = ({ left, right }) => {
+export const setRadial = ({ left, right, zIndex }) => {
   const bgColorRadial = {
     background: ` radial-gradient( circle at 1.98% 13.04%, ${left},
     transparent 100% ), radial-gradient(circle at 98.02% 28.95%,
       ${right}, transparent 100%),
     radial-gradient(circle at 50% 50%, #ffffff, #ffffff 100%)`,
+    zIndex,
   };
   return bgColorRadial;
 };

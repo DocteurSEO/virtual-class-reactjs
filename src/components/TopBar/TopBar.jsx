@@ -32,5 +32,6 @@ TopBar.defaultProps = {
   color: {
     left: "#ff512f",
     right: "#dd2476",
+    zIndex: "-1",
   },
 };

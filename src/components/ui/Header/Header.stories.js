@@ -7,7 +7,7 @@ export default {
 };
 
 const Template = (args) => {
-  return <Header />;
+  return <Header color={{ ...args }} />;
 };
 
 export const Default = Template.bind({});
