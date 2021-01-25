@@ -4,10 +4,16 @@ import { Header } from "./Header";
 export default {
   title: "UI/Header",
   component: Header,
+  argTypes: {
+    text: { control: "text" },
+  },
 };
 
 const Template = (args) => {
-  return <Header color={{ ...args }} />;
+  return <Header {...args} />;
 };
 
 export const Default = Template.bind({});
+Default.args = {
+  text: "Votre Titre ici ! ",
+};

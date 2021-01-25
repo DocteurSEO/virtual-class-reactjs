@@ -1,11 +1,24 @@
-import { useState } from "react";
-import { useMemo } from "react";
+import { useState, useMemo } from "react";
+import PropTypes from "prop-types";
 
 import "./Header.scss";
 import { TopBar } from "../../TopBar/TopBar";
 import { Logo } from "../../Logo/Logo";
 import { Label } from "../../Label/Label";
 import { Menu } from "../../Menu/Menu";
+
+/**
+ *
+ * header component : display header with text animation.
+ *
+ * ###Usage
+ *
+ * ```jsx
+ *
+ *<Header text="I'm the title ^^ " />
+ *
+ * ```
+ */
 
 export const Header = ({ text, color }) => {
   const [activeMenu, setActiveMenu] = useState(false);
@@ -37,4 +50,12 @@ export const Header = ({ text, color }) => {
       </div>
     </>
   );
+};
+
+Header.propTypes = {
+  text: PropTypes.string,
+};
+
+Header.defaultProps = {
+  text: "...",
 };
