@@ -1,11 +1,14 @@
 import { useState, useMemo } from "react";
 import PropTypes from "prop-types";
+import { useRecoilValue } from "recoil";
 
 import "./Header.scss";
 import { TopBar } from "../../TopBar/TopBar";
 import { Logo } from "../../Logo/Logo";
 import { Label } from "../../Label/Label";
 import { Menu } from "../../Menu/Menu";
+
+import { atomAnimation } from "../../../atoms/atomAnimation";
 
 /**
  *
@@ -22,6 +25,7 @@ import { Menu } from "../../Menu/Menu";
 
 export const Header = ({ text, color }) => {
   const [activeMenu, setActiveMenu] = useState(false);
+  const animation = useRecoilValue(atomAnimation);
 
   // const displayMenu = (etat) => {
   //   setActiveMenu(etat);
@@ -36,7 +40,7 @@ export const Header = ({ text, color }) => {
   }, [activeMenu]);
 
   return (
-    <>
+    <div className={animation.header}>
       <Menu statut={activeMenu} onMenuClick={displayMenu} />
       <TopBar color={color} />
       <div class="top-container">
@@ -48,7 +52,7 @@ export const Header = ({ text, color }) => {
           <Label onLabelClick={displayMenu} />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -16,6 +16,7 @@ body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.3;
   background-color: #ececec;
+  overflow: hidden;
 }
 
 .r-block {
@@ -46,4 +47,28 @@ ul {
 
 .z-index {
   z-index: -1;
+}
+
+.up {
+  animation-duration: 1s;
+  animation-name: upAnim;
+  animation-fill-mode: forwards;
+}
+
+.down {
+  animation-duration: 1s;
+  animation-name: downAnim;
+  animation-fill-mode: forwards;
+}
+
+.rUp {
+  animation-duration: 1s;
+  animation-name: resetUp;
+  animation-fill-mode: forwards;
+}
+
+.rDown {
+  animation-duration: 1s;
+  animation-name: resetDown;
+  animation-fill-mode: forwards;
 }

@@ -22,3 +22,51 @@
     transform: scale(1);
   }
 }
+
+@keyframes upAnim {
+  0% {
+    opacity: 1;
+    margin-top: 0;
+  }
+
+  100% {
+    opacity: 0;
+    margin-top: -300px;
+  }
+}
+
+@keyframes resetUp {
+  0% {
+    opacity: 0;
+    margin-top: -300px;
+  }
+
+  100% {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+@keyframes resetDown {
+  0% {
+    opacity: 0;
+    margin-top: 600px;
+  }
+
+  100% {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+@keyframes downAnim {
+  0% {
+    opacity: 1;
+    margin-top: 0px;
+  }
+
+  100% {
+    opacity: 0;
+    margin-top: 600px;
+  }
+}

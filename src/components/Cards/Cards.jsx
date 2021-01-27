@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
+import { useRecoilValue } from "recoil";
 
 import PropTypes from "prop-types";
 import { Card } from "./Card";
 
 import "./Cards.scss";
 import perso from "./img/perso.jpg";
+
+import { atomAnimation } from "../../atoms/atomAnimation";
 
 /**
  *
@@ -25,12 +28,13 @@ import perso from "./img/perso.jpg";
 
 export const Cards = ({ userInfo }) => {
   const [user, setUser] = useState(userInfo);
+  const animation = useRecoilValue(atomAnimation);
 
   useEffect(() => {
     setUser(userInfo);
   }, [userInfo]);
   return (
-    <div className="container">
+    <div className={animation.cards}>
       <div class="at-grid" data-column="3">
         <Card userInfo={user} />
       </div>

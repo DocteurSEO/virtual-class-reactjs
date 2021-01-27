@@ -20,7 +20,7 @@ import perso from "./img/ahmed.jpg";
 export const Card = ({ userInfo }) => {
   const { name, info, picture } = userInfo;
   return (
-    <div class="at-column">
+    <div class="at-column ">
       <div class="at-user">
         <div class="at-user__avatar">
           <img src={picture} />;

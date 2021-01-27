@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 /**
  *
@@ -21,7 +20,6 @@ export const useStateMenu = (statut, onMenuClick) => {
   const [active, setActive] = useState(statut);
 
   useEffect(() => {
-    console.log("usefeef", statut);
     setActive(statut);
   }, [statut]);
 
