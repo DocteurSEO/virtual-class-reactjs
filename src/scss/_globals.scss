@@ -16,6 +16,7 @@ body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.3;
   background-color: #ececec;
+  overflow-x: hidden;
 }
 
 .r-block {
@@ -54,6 +55,13 @@ ul {
   animation-fill-mode: forwards;
 }
 
+.left {
+  animation-duration: 1s;
+  animation-name: leftAnim;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
 .down {
   animation-duration: 1s;
   animation-name: downAnim;
@@ -64,6 +72,12 @@ ul {
 .rUp {
   animation-duration: 1s;
   animation-name: resetUp;
+  animation-fill-mode: forwards;
+}
+
+.rLeft {
+  animation-duration: 1s;
+  animation-name: resetLeft;
   animation-fill-mode: forwards;
 }
 

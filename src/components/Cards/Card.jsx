@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
+import { useRecoilState } from "recoil";
 
+import { atomAnimation, atomEditCurrentUser } from "../../atoms/atomAnimation";
 import perso from "./img/ahmed.jpg";
 
 /**
@@ -17,10 +19,27 @@ import perso from "./img/ahmed.jpg";
  * ```
  */
 
-export const Card = ({ userInfo, styles }) => {
+export const Card = ({ userInfo, styles, id }) => {
   const { name, info, picture } = userInfo;
+  const [animation, setAnimation] = useRecoilState(atomAnimation);
+  const [currentUser, setCurrentUser] = useRecoilState(atomEditCurrentUser);
+  function editUser(id, userInfo) {
+    setAnimation({
+      ...animation,
+      header: "",
+      cards: " container down",
+      form: "form rLeft",
+    });
+
+    setCurrentUser({ ...userInfo, id });
+  }
+
   return (
-    <div class="at-column" style={styles}>
+    <div
+      class="at-column"
+      style={styles}
+      onClick={() => editUser(id, userInfo)}
+    >
       <div class="at-user">
         <div class="at-user__avatar">
           <img src={picture} alt={"Erreur, image non disponible "} />;

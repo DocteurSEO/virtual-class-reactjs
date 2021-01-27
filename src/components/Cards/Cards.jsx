@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRecoilValue } from "recoil";
+import { ref } from "../../firebase";
 
 import PropTypes from "prop-types";
 import { Card } from "./Card";
@@ -26,17 +27,32 @@ import { atomAnimation } from "../../atoms/atomAnimation";
  * ```
  */
 
-export const Cards = ({ userInfo }) => {
-  const [user, setUser] = useState(userInfo);
-  const animation = useRecoilValue(atomAnimation);
+const userDataRef = ref.child("user");
 
+export const Cards = () => {
+  const [userData, setUserdata] = useState(false);
+  const animation = useRecoilValue(atomAnimation);
+  const [userDataKey, setUserDataKey] = useState([]);
+
+  function userEdit(id) {}
   useEffect(() => {
-    setUser(userInfo);
-  }, [userInfo]);
+    userDataRef.on("value", (snapshot) => {
+      if (snapshot.val()) {
+        setUserDataKey(Object.keys(snapshot.val()));
+        setUserdata(Object.values(snapshot.val()));
+      }
+    });
+  }, []);
   return (
     <div className={animation.cards}>
       <div class="at-grid" data-column="3">
-        <Card userInfo={user} />
+        {userData &&
+          userData.map((user, i) => {
+            return (
+              <Card key={userDataKey[i]} userInfo={user} id={userDataKey[i]} />
+            );
+          })}
+        {/* <Card userInfo={} /> */}
       </div>
     </div>
   );

@@ -25,12 +25,8 @@ import { atomAnimation } from "../../../atoms/atomAnimation";
 
 export const Header = ({ text, color }) => {
   const [activeMenu, setActiveMenu] = useState(false);
-  const animation = useRecoilValue(atomAnimation);
 
-  // const displayMenu = (etat) => {
-  //   setActiveMenu(etat);
-  //   console.log(activeMenu);
-  // };
+  const animation = useRecoilValue(atomAnimation);
 
   const displayMenu = useMemo(() => {
     return (etat) => {

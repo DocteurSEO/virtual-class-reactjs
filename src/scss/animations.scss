@@ -35,6 +35,31 @@
   }
 }
 
+@keyframes leftAnim {
+  0% {
+    opacity: 1;
+    margin-left: 0px;
+  }
+
+  100% {
+    opacity: 0;
+    margin-left: 600px;
+    position: absolute;
+  }
+}
+
+@keyframes downAnim {
+  0% {
+    opacity: 1;
+    margin-top: 0px;
+  }
+
+  100% {
+    opacity: 0;
+    margin-top: 600px;
+  }
+}
+
 @keyframes resetUp {
   0% {
     opacity: 0;
@@ -51,23 +76,26 @@
   0% {
     opacity: 0;
     margin-top: 600px;
-    display: block;
   }
 
   100% {
     opacity: 1;
-    margin-top: 0;
+    margin-top: 50px;
   }
 }
 
-@keyframes downAnim {
+@keyframes resetLeft {
   0% {
-    opacity: 1;
-    margin-top: 0px;
+    opacity: 0;
+    margin-left: 600px;
+
+    display: none;
   }
 
   100% {
-    opacity: 0;
-    margin-top: 600px;
+    opacity: 1;
+    margin-left: 15%;
+
+    position: relative;
   }
 }

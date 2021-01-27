@@ -1,6 +1,6 @@
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 
-import { atomAnimation } from "../../atoms/atomAnimation";
+import { atomAnimation, atomEditCurrentUser } from "../../atoms/atomAnimation";
 import { useStateUser } from "./FormLogic";
 
 import { Card } from "../Cards/Card";
@@ -8,26 +8,23 @@ import { Button } from "../Button/Button";
 import "./Form.scss";
 
 export const Form = () => {
-  // const [animation, setAnimation] = useRecoilState(atomAnimation);
-
-  // function animationPage() {
-  //   setAnimation({ ...animation, header: "rUp", cards: " container rDown" });
-  //   console.log(animation);
-  // }
-
-  const [user, onFormChange] = useStateUser();
+  const [user, onFormChange, onFormSubmit] = useStateUser();
+  const animation = useRecoilValue(atomAnimation);
+  const editUser = useRecoilValue(atomEditCurrentUser);
+  console.log("form", editUser);
 
   return (
-    <div className="form">
+    <div className={animation.form}>
       <Card userInfo={user} styles={{ width: "250px" }} />
-      <form onChange={onFormChange}>
-        <input placeholder="Nom prénom" />
-        <input placeholder="URL image" />
+      <form onChange={(event) => onFormChange(event, editUser)}>
+        <input placeholder={"Nom prénom"} />
         <input placeholder="Fonction" />
+        <input placeholder="URL image" />
         <div className="btnContainer">
           <Button
             text="Confirmer"
             style={{ color: "black", background: "#82DFC5" }}
+            onButtonClick={onFormSubmit}
           />
           <Button
             text="Supprimer"
