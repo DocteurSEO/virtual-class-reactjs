@@ -1,6 +1,10 @@
 import { useRecoilState } from "recoil";
 import { atomAnimation } from "../../atoms/atomAnimation";
 
+import { Card } from "../Cards/Card";
+import { Button } from "../Button/Button";
+import "./Form.scss";
+
 export const Form = () => {
   const [animation, setAnimation] = useRecoilState(atomAnimation);
 
@@ -10,8 +14,20 @@ export const Form = () => {
   }
 
   return (
-    <div style={{ position: "absolute" }}>
-      <button onClick={animationPage}>cLCOSE</button>
+    <div className="form">
+      <Card styles={{ width: "250px" }} />
+      <form>
+        <input placeholder="Nom prénom" />
+        <input placeholder="URL image" />
+        <input placeholder="Fonction" />
+        <div className="btnContainer">
+          <Button
+            text="Confirmer"
+            style={{ color: "white", background: "#ED597B" }}
+          />
+          <Button text="Supprimer" />
+        </div>
+      </form>
     </div>
   );
 };

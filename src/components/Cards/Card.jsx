@@ -17,10 +17,10 @@ import perso from "./img/ahmed.jpg";
  * ```
  */
 
-export const Card = ({ userInfo }) => {
+export const Card = ({ userInfo, styles }) => {
   const { name, info, picture } = userInfo;
   return (
-    <div class="at-column ">
+    <div class="at-column" style={styles}>
       <div class="at-user">
         <div class="at-user__avatar">
           <img src={picture} />;
