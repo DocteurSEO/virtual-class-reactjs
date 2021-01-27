@@ -23,10 +23,10 @@ export const Card = ({ userInfo, styles }) => {
     <div class="at-column" style={styles}>
       <div class="at-user">
         <div class="at-user__avatar">
-          <img src={picture} />;
+          <img src={picture} alt={"Erreur, image non disponible "} />;
         </div>
-        <div class="at-user__name">{name}</div>
-        <div class="at-user__title">{info}</div>
+        <div class="at-user__name">{name.substr(0, 19)}</div>
+        <div class="at-user__title">{info.substr(0, 32)}</div>
         <ul class="at-social">
           <li class="at-social__item"></li>
         </ul>
