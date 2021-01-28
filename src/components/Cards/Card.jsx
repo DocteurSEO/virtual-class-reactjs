@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
-import { useRecoilState } from "recoil";
 
-import { atomAnimation, atomEditCurrentUser } from "../../atoms/atomAnimation";
 import perso from "./img/ahmed.jpg";
+import { UseCard } from "./CardLogic";
 
 /**
  *
@@ -21,19 +20,7 @@ import perso from "./img/ahmed.jpg";
 
 export const Card = ({ userInfo, styles, id }) => {
   const { name, info, picture } = userInfo;
-  const [animation, setAnimation] = useRecoilState(atomAnimation);
-  const [currentUser, setCurrentUser] = useRecoilState(atomEditCurrentUser);
-  function editUser(id, userInfo) {
-    setAnimation({
-      ...animation,
-      header: "",
-      cards: " container down",
-      form: "form rLeft",
-      headerTitle: "Les modifications sont enregistrées en ligne ",
-    });
-
-    setCurrentUser({ ...userInfo, id });
-  }
+  const [editUser] = UseCard();
 
   return (
     <div

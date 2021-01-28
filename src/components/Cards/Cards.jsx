@@ -13,7 +13,7 @@ import { atomAnimation } from "../../atoms/atomAnimation";
 /**
  *
  * Cards component : displays user informations  
- * 
+ *   useEffect Hoock's load data from firebase (loading is done only once)
 
  * 
  * ```jsx

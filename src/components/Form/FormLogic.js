@@ -5,6 +5,17 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { atomAnimation, atomEditCurrentUser } from "../../atoms/atomAnimation";
 const user = ref.child("user");
 
+/**
+ *
+ * Form loogic: all the functionalities related to the form ,
+ * to add or modify users,
+ *
+ * as the case may be, the data is loaded and saved on the database,
+ * delete a user or add a new one
+ *
+ *
+ */
+
 export const useStateUser = () => {
   const defaultUrlPicture = `https://firebasestorage.googleapis.com/v0/b/virtualclass-5022b.appspot.com/o/homer.gif?alt=media&token=0cb4d472-6f67-4530-a1cf-0654c9d1bd5e`;
   const [userInfo, setUserInfo] = useState({

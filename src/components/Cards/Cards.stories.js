@@ -2,10 +2,13 @@ import { Cards } from "./Cards";
 import ahmed from "./img/ahmed.jpg";
 import mathieu from "./img/perso.jpg";
 
+import { RecoilRoot } from "recoil";
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: "UI/Cards",
   component: Cards,
+  decorators: [(storyFn) => <RecoilRoot>{storyFn()}</RecoilRoot>],
   argTypes: {
     name: { control: "text" },
     info: { control: "text" },

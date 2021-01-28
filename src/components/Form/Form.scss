@@ -6,6 +6,9 @@
   margin-left: 15%;
   display: flex;
   z-index: 0;
+  @media (max-width: 608px) {
+    flex-direction: column;
+  }
   form {
     background: rgba(255, 255, 255, 0.897);
     display: flex;

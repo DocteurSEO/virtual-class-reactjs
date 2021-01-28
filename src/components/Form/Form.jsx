@@ -7,6 +7,18 @@ import { Card } from "../Cards/Card";
 import { Button } from "../Button/Button";
 import "./Form.scss";
 
+/**
+ *  Form Component : display form use Recoil for global state
+ *
+ * ##Usage
+ * ```jsx
+ *
+ *<Form  />
+ *
+ * ```
+ *
+ */
+
 export const Form = () => {
   const [
     user,
