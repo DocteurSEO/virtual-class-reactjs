@@ -10,7 +10,7 @@ npm start
 ```
 the application launches on http://localhost:3000/
 
-Change the database connection in the index.js file in the firebase folder.
+Change the database connection in the index.js file in the src/firebase folder.
 
 ### consult the stoybook 
 ```
