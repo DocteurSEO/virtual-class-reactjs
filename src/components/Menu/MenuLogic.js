@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { useRecoilState } from "recoil";
+import { atomAnimation, atomEditCurrentUser } from "../../atoms/atomAnimation";
 
 /**
  *
@@ -18,6 +20,8 @@ import { useState, useEffect } from "react";
 
 export const useStateMenu = (statut, onMenuClick) => {
   const [active, setActive] = useState(statut);
+  const [animation, setAnimation] = useRecoilState(atomAnimation);
+  const [user, setUser] = useRecoilState(atomEditCurrentUser);
 
   useEffect(() => {
     setActive(statut);
@@ -28,5 +32,21 @@ export const useStateMenu = (statut, onMenuClick) => {
     onMenuClick(false);
   }
 
-  return [active, closeMenu];
+  function addUser() {
+    setAnimation({
+      header: "header",
+      cards: "container down",
+      form: "form rLeft ",
+      headerTitle: "Ajouter un élèves ",
+    });
+    setUser({
+      name: "",
+      info: "",
+      picture: "",
+      id: "",
+    });
+    closeMenu();
+  }
+
+  return [active, closeMenu, addUser];
 };

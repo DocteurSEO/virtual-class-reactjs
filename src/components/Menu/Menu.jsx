@@ -19,7 +19,7 @@ import "./Menu.scss";
  */
 
 export const Menu = ({ statut, onMenuClick }) => {
-  const [active, setActive] = useStateMenu(statut, onMenuClick);
+  const [active, setActive, addUser] = useStateMenu(statut, onMenuClick);
 
   return (
     <div
@@ -36,7 +36,7 @@ export const Menu = ({ statut, onMenuClick }) => {
       <div className="r-block menu-content">
         <h3 className="r-block list-header">Élèves</h3>
         <ul className="r-block options-list">
-          <li>Ajouter </li>
+          <li onClick={addUser}>Ajouter </li>
         </ul>
       </div>
     </div>

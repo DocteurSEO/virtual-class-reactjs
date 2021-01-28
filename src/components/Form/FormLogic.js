@@ -6,42 +6,52 @@ import { atomAnimation, atomEditCurrentUser } from "../../atoms/atomAnimation";
 const user = ref.child("user");
 
 export const useStateUser = () => {
+  const defaultUrlPicture = `https://firebasestorage.googleapis.com/v0/b/virtualclass-5022b.appspot.com/o/homer.gif?alt=media&token=0cb4d472-6f67-4530-a1cf-0654c9d1bd5e`;
   const [userInfo, setUserInfo] = useState({
     name: "",
     info: "",
-    picture:
-      "https://firebasestorage.googleapis.com/v0/b/virtualclass-5022b.appspot.com/o/homer.gif?alt=media&token=0cb4d472-6f67-4530-a1cf-0654c9d1bd5e",
+    picture: defaultUrlPicture,
   });
+  const [displayDeliteBtn, setDisplayDeliteBtn] = useState(false);
 
   const [animation, setAnimation] = useRecoilState(atomAnimation);
   const editUser = useRecoilValue(atomEditCurrentUser);
   const [type, setType] = useState("");
   useEffect(() => {
+    setType("push");
+    setDisplayDeliteBtn(false);
+
     if (editUser.id !== "") {
       setType("update");
-      const input = document.querySelector("form").elements;
-      input[0].value = editUser.name;
-      input[1].value = editUser.info;
-      input[2].value = editUser.picture;
+      setDisplayDeliteBtn(true);
     }
+
+    const input = document.querySelector("form").elements;
+    input[0].value = editUser.name;
+    input[1].value = editUser.info;
+    input[2].value = editUser.picture;
+    setUserInfo({
+      ...userInfo,
+      name: input[0].value,
+      info: input[1].value,
+      picture: defaultUrlPicture,
+    });
   }, [editUser]);
+
   function animationPage() {
     setAnimation({
       ...animation,
       header: "",
       cards: " container rDown",
       form: "form left",
+      headerTitle: "Liste des élèves ! ",
     });
-    console.log(animation);
   }
 
   function onFormChange(e, editUser) {
     const input = e.currentTarget.elements;
-    const picture =
-      input[2].value !== ""
-        ? input[2].value
-        : "https://firebasestorage.googleapis.com/v0/b/virtualclass-5022b.appspot.com/o/homer.gif?alt=media&token=0cb4d472-6f67-4530-a1cf-0654c9d1bd5e";
-
+    const picture = input[2].value !== "" ? input[2].value : defaultUrlPicture;
+    console.log(userInfo);
     setUserInfo({
       ...userInfo,
       name: input[0].value,
@@ -53,14 +63,20 @@ export const useStateUser = () => {
   const onFormSubmit = (e) => {
     e.preventDefault();
     const id = editUser.id;
+
     typeOfSubmit(userInfo, id, type);
+  };
+
+  const onDelete = (e) => {
+    e.preventDefault();
+    const id = editUser.id;
+
+    user.child(id).remove((error) => handleSubmitError(error));
   };
 
   function typeOfSubmit(userInfo, id, type) {
     if (type === "update") {
       user.child(id).update(userInfo, (error) => handleSubmitError(error));
-    } else if (type === "delete") {
-      user.child(id).update(null, (error) => handleSubmitError(error));
     } else {
       user.push(userInfo, (error) => handleSubmitError(error));
     }
@@ -74,5 +90,5 @@ export const useStateUser = () => {
     }
   }
 
-  return [userInfo, onFormChange, onFormSubmit];
+  return [userInfo, displayDeliteBtn, onFormChange, onFormSubmit, onDelete];
 };

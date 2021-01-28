@@ -34,7 +34,9 @@ export const Cards = () => {
   const animation = useRecoilValue(atomAnimation);
   const [userDataKey, setUserDataKey] = useState([]);
 
-  function userEdit(id) {}
+  function noneUser() {
+    return <p>Veuillez ajouter Élèves</p>;
+  }
   useEffect(() => {
     userDataRef.on("value", (snapshot) => {
       if (snapshot.val()) {
@@ -52,7 +54,7 @@ export const Cards = () => {
               <Card key={userDataKey[i]} userInfo={user} id={userDataKey[i]} />
             );
           })}
-        {/* <Card userInfo={} /> */}
+        {!userData && noneUser()}
       </div>
     </div>
   );

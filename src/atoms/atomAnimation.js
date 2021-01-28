@@ -4,9 +4,9 @@ export const atomAnimation = atom({
   key: "animation",
   default: {
     header: "header",
-    cards: "container down",
-    form: "form  ",
-    headerTitle: "Liste des Apprenents ",
+    cards: "container ",
+    form: "form displayNone ",
+    headerTitle: "Liste des élèves ",
   },
 });
 

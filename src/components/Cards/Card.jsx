@@ -29,6 +29,7 @@ export const Card = ({ userInfo, styles, id }) => {
       header: "",
       cards: " container down",
       form: "form rLeft",
+      headerTitle: "Les modifications sont enregistrées en ligne ",
     });
 
     setCurrentUser({ ...userInfo, id });
@@ -44,8 +45,8 @@ export const Card = ({ userInfo, styles, id }) => {
         <div class="at-user__avatar">
           <img src={picture} alt={"Erreur, image non disponible "} />;
         </div>
-        <div class="at-user__name">{name.substr(0, 19)}</div>
-        <div class="at-user__title">{info.substr(0, 32)}</div>
+        <div class="at-user__name">{name && name.substr(0, 19)}</div>
+        <div class="at-user__title">{info && info.substr(0, 32)}</div>
         <ul class="at-social">
           <li class="at-social__item"></li>
         </ul>

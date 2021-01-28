@@ -31,7 +31,6 @@ export const Header = ({ text, color }) => {
   const displayMenu = useMemo(() => {
     return (etat) => {
       setActiveMenu(etat);
-      console.log("meno", activeMenu);
     };
   }, [activeMenu]);
 

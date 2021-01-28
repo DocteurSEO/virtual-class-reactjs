@@ -8,10 +8,15 @@ import { Button } from "../Button/Button";
 import "./Form.scss";
 
 export const Form = () => {
-  const [user, onFormChange, onFormSubmit] = useStateUser();
+  const [
+    user,
+    displayDeliteBtn,
+    onFormChange,
+    onFormSubmit,
+    onDelete,
+  ] = useStateUser();
   const animation = useRecoilValue(atomAnimation);
   const editUser = useRecoilValue(atomEditCurrentUser);
-  console.log("form", editUser);
 
   return (
     <div className={animation.form}>
@@ -26,10 +31,13 @@ export const Form = () => {
             style={{ color: "black", background: "#82DFC5" }}
             onButtonClick={onFormSubmit}
           />
-          <Button
-            text="Supprimer"
-            style={{ color: "white", background: "#ED597B" }}
-          />
+          {displayDeliteBtn && (
+            <Button
+              text="Supprimer"
+              style={{ color: "white", background: "#ED597B" }}
+              onButtonClick={onDelete}
+            />
+          )}
         </div>
       </form>
     </div>
